@@ -20,13 +20,14 @@ extension Home {
         @State var animateTIR = Date.distantPast
         @State var showBolusActiveAlert = false
         @State var displayAutoHistory = false
+        @State var displayDynamicHistory = false
 
         let buttonFont = Font.custom("TimeButtonFont", size: 14)
         let viewPadding: CGFloat = 5
 
         @Environment(\.managedObjectContext) var moc
-        @Environment(\.colorScheme) var colorScheme
         @Environment(\.sizeCategory) private var fontSize
+        @Environment(\.colorScheme) var colorScheme
 
         @FetchRequest(
             entity: Override.entity(),
@@ -265,25 +266,27 @@ extension Home {
                 VStack {
                     Divider()
                     HStack {
-                        Button { state.showModal(for: .addCarbs(editMode: false, override: false)) }
-                        label: {
-                            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-                                Image(systemName: "fork.knife")
-                                    .renderingMode(.template)
-                                    .font(.custom("Buttons", size: 24))
-                                    .foregroundColor(colorScheme == .dark ? .loopYellow : .orange)
-                                    .padding(8)
-                                    .foregroundColor(.loopYellow)
-                                if let carbsReq = state.carbsRequired {
-                                    Text(numberFormatter.string(from: carbsReq as NSNumber)!)
-                                        .font(.caption)
-                                        .foregroundColor(.white)
-                                        .padding(4)
-                                        .background(Capsule().fill(Color.red))
+                        if state.carbButton {
+                            Button { state.showModal(for: .addCarbs(editMode: false, override: false)) }
+                            label: {
+                                ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
+                                    Image(systemName: "fork.knife")
+                                        .renderingMode(.template)
+                                        .font(.custom("Buttons", size: 24))
+                                        .foregroundColor(colorScheme == .dark ? .loopYellow : .orange)
+                                        .padding(8)
+                                        .foregroundColor(.loopYellow)
+                                    if let carbsReq = state.carbsRequired {
+                                        Text(numberFormatter.string(from: carbsReq as NSNumber)!)
+                                            .font(.caption)
+                                            .foregroundColor(.white)
+                                            .padding(4)
+                                            .background(Capsule().fill(Color.red))
+                                    }
                                 }
-                            }
-                        }.buttonStyle(.borderless)
-                        Spacer()
+                            }.buttonStyle(.borderless)
+                            Spacer()
+                        }
                         Button {
                             (state.bolusProgress != nil) ? showBolusActiveAlert = true :
                                 state.showModal(for: .bolus(
@@ -310,27 +313,29 @@ extension Home {
                             .foregroundColor(.insulin)
                             Spacer()
                         }
-                        ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-                            Image(systemName: isOverride ? "person.fill" : "person")
-                                .symbolRenderingMode(.palette)
-                                .font(.custom("Buttons", size: 28))
-                                .foregroundStyle(.purple)
-                                .padding(8)
-                                .background(isOverride ? .purple.opacity(0.15) : .clear)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                        }
-                        .onTapGesture {
-                            if isOverride {
-                                showCancelAlert.toggle()
-                            } else {
+                        if state.profileButton {
+                            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
+                                Image(systemName: isOverride ? "person.fill" : "person")
+                                    .symbolRenderingMode(.palette)
+                                    .font(.custom("Buttons", size: 28))
+                                    .foregroundStyle(.purple)
+                                    .padding(8)
+                                    .background(isOverride ? .purple.opacity(0.15) : .clear)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                            }
+                            .onTapGesture {
+                                if isOverride {
+                                    showCancelAlert.toggle()
+                                } else {
+                                    state.showModal(for: .overrideProfilesConfig)
+                                }
+                            }
+                            .onLongPressGesture {
                                 state.showModal(for: .overrideProfilesConfig)
                             }
-                        }
-                        .onLongPressGesture {
-                            state.showModal(for: .overrideProfilesConfig)
+                            Spacer()
                         }
                         if state.useTargetButton {
-                            Spacer()
                             Image(systemName: "target")
                                 .renderingMode(.template)
                                 .font(.custom("Buttons", size: 24))
@@ -348,8 +353,8 @@ extension Home {
                                 .onLongPressGesture {
                                     state.showModal(for: .addTempTarget)
                                 }
+                            Spacer()
                         }
-                        Spacer()
                         Button { state.showModal(for: .settings) }
                         label: {
                             Image(systemName: "gear")
@@ -359,7 +364,7 @@ extension Home {
                         .buttonStyle(.borderless)
                         .foregroundColor(.gray)
                     }
-                    .padding(.horizontal, state.allowManualTemp ? 5 : 24)
+                    .padding(.horizontal, state.allowManualTemp ? 10 : 24)
                     .padding(.bottom, geo.safeAreaInsets.bottom)
                 }
             }
@@ -459,7 +464,11 @@ extension Home {
             addBackground()
                 .frame(minHeight: 200)
                 .overlay {
-                    PreviewChart(readings: $state.readings, lowLimit: $state.data.lowGlucose, highLimit: $state.data.highGlucose)
+                    PreviewChart(
+                        readings: $state.readings,
+                        lowLimit: $state.data.lowGlucose,
+                        highLimit: $state.data.highGlucose
+                    )
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .addShadows()
@@ -642,8 +651,8 @@ extension Home {
                         }
 
                         Divider()
-
-                    }.padding(.top, geo.safeAreaInsets.top)
+                    }
+                    .padding(.top, geo.safeAreaInsets.top)
                 }
         }
 
@@ -687,20 +696,23 @@ extension Home {
         }
 
         var timeSetting: some View {
-            let string = "\(state.hours) " + NSLocalizedString("hours", comment: "") + "   "
-            return Menu(string) {
-                Button("3 " + NSLocalizedString("hours", comment: ""), action: { state.hours = 3 })
-                Button("6 " + NSLocalizedString("hours", comment: ""), action: { state.hours = 6 })
-                Button("9 " + NSLocalizedString("hours", comment: ""), action: { state.hours = 9 })
-                Button("12 " + NSLocalizedString("hours", comment: ""), action: { state.hours = 12 })
-                Button("24 " + NSLocalizedString("hours", comment: ""), action: { state.hours = 24 })
-                Button("UI/UX Settings", action: { state.showModal(for: .statisticsConfig) })
+            let hourLabel = NSLocalizedString("\(state.hours) hours", comment: "") + "   "
+
+            return Menu(hourLabel) {
+                ForEach([3, 6, 9, 12, 24], id: \.self) { value in
+                    let label = NSLocalizedString("\(value) hours", comment: "")
+                    Button(label, action: { state.hours = value })
+                }
+
+                Button("UI/UX Settings", action: {
+                    state.showModal(for: .statisticsConfig)
+                })
             }
             .buttonStyle(.borderless)
             .foregroundStyle(.primary)
             .font(.timeSettingFont)
             .padding(.vertical, 15)
-            .background(TimeEllipse(characters: string.count))
+            .background(TimeEllipse(characters: hourLabel.count))
         }
 
         private var isfView: some View {
@@ -714,6 +726,8 @@ extension Home {
                 .onTapGesture {
                     if state.autoisf {
                         displayAutoHistory.toggle()
+                    } else {
+                        displayDynamicHistory.toggle()
                     }
                 }
             }.offset(x: 130)
@@ -774,8 +788,8 @@ extension Home {
                                 if !state.iobData.isEmpty {
                                     activeIOBView
                                 }
-
-                            }.background {
+                            }
+                            .background {
                                 // Track vertical scroll
                                 GeometryReader { proxy in
                                     let scrollPosition = proxy.frame(in: .named("HomeScrollView")).minY
@@ -797,8 +811,7 @@ extension Home {
                         buttonPanel(geo)
                     }
                     .background(
-                        colorScheme == .light ? .gray.opacity(IAPSconfig.backgroundOpacity * 2) : .white
-                            .opacity(IAPSconfig.backgroundOpacity * 2)
+                        colorScheme == .light ? IAPSconfig.homeViewBackgroundLight : IAPSconfig.homeViewBackgrundDark
                     )
                     .ignoresSafeArea(edges: .vertical)
                     .overlay {
@@ -827,6 +840,11 @@ extension Home {
             .ignoresSafeArea(.keyboard)
             .sheet(isPresented: $displayAutoHistory) {
                 AutoISFHistoryView(units: state.data.units)
+                    .environment(\.colorScheme, colorScheme)
+            }
+            .sheet(isPresented: $displayDynamicHistory) {
+                DynamicHistoryView(units: state.data.units)
+                    .environment(\.colorScheme, colorScheme)
             }
             .popup(isPresented: state.isStatusPopupPresented, alignment: .bottom, direction: .bottom) {
                 popup
