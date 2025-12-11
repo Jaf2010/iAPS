@@ -190,6 +190,21 @@
 /* */
 "Are you sure?" = "Ви впевнені?";
 
+/* */
+"Clear Records" = "Очистити записи";
+
+/* */
+"Delete CoreData database records" = "Видалити записи бази даних CoreData";
+
+/* */
+"Delete NS records" = "Видалити записи NS";
+
+/* */
+"All records in " = "Усі записи в";
+
+/* */
+" will be deleted!" = "буде видалено!";
+
 /* Bottom target temp */
 "Bottom target" = "Нижня ціль";
 
@@ -1518,10 +1533,10 @@ Enact a temp Basal or a temp target */
 "Connect to Apple Health" = "З'єднатися з Apple Health";
 
 /* Show when have not permissions for writing to Health */
-"For write data to Apple Health you must give permissions in Settings > Health > Data Access" = "Для запису даних в Apple Health ви повинні надати дозволи в Налаштування > Здоров’я > Доступ до даних";
+"To allow iAPS to write data to Apple Health, you must grant permission in Settings > Health > Data Access." = "Для запису даних в Apple Health ви повинні надати дозволи в Налаштування > Здоров’я > Доступ до даних";
 
 /* */
-"This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access. If you enter a glucose value into Apple Health, open iAPS to confirm it shows up." = "Це дозволяє iAPS читати та записувати в Apple Heath. Ви також повинні надати дозволи в меню «Налаштування» > «Здоров’я» > «Доступ до даних». Якщо ви введете значення глюкози в Apple Health, відкрийте iAPS, щоб підтвердити його відображення.";
+"This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access." = "Це дозволяє iAPS читати та записувати в Apple Heath. Ви також повинні надати дозволи в меню «Налаштування» > «Здоров’я» > «Доступ до даних».";
 
 /* New ALerts ------------------------- */
 /* Info title */
@@ -2176,8 +2191,8 @@ Enact a temp Basal or a temp target */
 /* HbA1c for all glucose storage days */
 "all" = "все";
 
-/* Active Insulin View */
-"Active Insulin" = "Активний Інсулін";
+/* IOB View */
+"Insulin on Board" = "Інсуліну на борту";
 
 /* Active Insulin View */
 "Time with negative insulin" = "Час з негативним інсуліном";
@@ -2200,8 +2215,14 @@ Enact a temp Basal or a temp target */
 /* Active Insulin View */
 "TDD 3 days ago" = "TDD 3 дні тому";
 
-/* Active Carbohydrates View */
-"Active Carbohydrates" = "Активні Вуглеводи";
+/* COB View */
+"Carbohydrates on Board" = "Вуглеводи на борту";
+
+/* UI/UX-setting */
+"Display COB Chart" = "Відображення діаграми COB";
+
+/* UI/UX-setting */
+"Display Insulin Activity Chart" = "Відображення діаграми активності Інсуліну";
 
 /* --------------------------------------------------------  Dexcom G7 --------------------------------------*/
 
@@ -2859,7 +2880,7 @@ Enact a temp Basal or a temp target */
 "Remaining Carbs Cap" = "Поглинання Вуглеводів, що залишилися";
 
 /* "Remaining Carbs Cap" */
-"This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption." = "Це значення максимальної кількості вуглеводів, яке імовірно буде поглинено через 4 години, якщо алгоритм не побачить поглинання вуглеводів.";
+"This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption. Maximum 90" = "Це максимальна кількість вуглеводів, яка, як ми припускаємо, засвоїться протягом 4 годин, якщо ми ще не спостерігаємо засвоєння вуглеводів. Максимум 90";
 
 /* Headline ”Max SMB Basal Minutes" */
 "Max SMB Basal Minutes" = "Максимум SMB Базальних Хвилин";
@@ -3091,10 +3112,16 @@ Enact a temp Basal or a temp target */
 "Display Sensor Age" = "Показувати вік Сенсору";
 
 /* UI/UX option */
+"Display Sensor Time Remaining" = "Час Сенсора, що залишився ";
+
+/* UI/UX option */
 "Hide Concentration Badge" = "Сховати значок Концентрації";
 
 /* UI/UX option */
 "Use insulin bars" = "Відображати інсулін вертикально";
+
+/* UI/UX option */
+"Use carb bars" = "Використовуйте вуглеводні батончики";
 
 /* UI/UX option */
 "Hide the bolus amount strings when amount is under" = "Приховати рядки об'єм болюса, коли об'єм менший";
@@ -3106,16 +3133,10 @@ Enact a temp Basal or a temp target */
 "Display carb equivalent amount" = "Показати еквівалентну кількість вуглеводів";
 
 /* UI/UX option */
-"Display Sensor Time Remaining" = "Відображати час Сенсору що залишився.";
-
-/* UI/UX option */
-"Display Sensor Age, but not Time Remaining" = "Відображати вік Сенсору замість часу, що залишився.";
-
-/* UI/UX option */
 "Display Ratio and a History View button" = "Відображати Співвідношення та Кнопку перегляду історії";
 
 /* UI/UX option */
-"Auto ISF Home View" = "Авто ISF на Головному екрані";
+"Home View Ratio Button" = "Кнопка співвідношення сторін головної сторінки";
 
 /* UI/UX option */
 "Light" = "Світлий";
@@ -3131,6 +3152,12 @@ Enact a temp Basal or a temp target */
 
 /* UI/UX option */
 "Light / Dark Mode" = "Світло/Темний Режим";
+
+/* Debug option */
+"Neglect Carbohydrates in oref0" = "Не враховуйте вуглеводи в oref0";
+
+/* Debug option */
+"Hide oref0 Predictions" = "Приховати прогнози oref0";
 
 /* Setting title */
 "Bolus Calculator" = "Калькулятор Болюса";
@@ -3209,3 +3236,57 @@ Enact a temp Basal or a temp target */
 
 /* Headline "To enable settings, go to the App Config section in iOS Settings App" */
 "To enable settings, go to the App Config section in iOS Settings App" = "Щоб увімкнути налаштування, перейдіть до розділу Програми в Налаштуваннях iPhone";
+
+/* Section header in CGM view */
+"Active CGM" = "Активний CGM";
+
+/* pump name label, when pump is a cgm "Pump/CGM" */
+"Pump/CGM" = "Помпа/CGM";
+
+/* Button "Stop using the pump as CGM" */
+"Stop using the pump as CGM" = "Не використовувати помпу як CGM";
+
+/* Section header in CGM view */
+"Shared App Group Source" = "Джерело спільної групи програм";
+
+/* prefix for the shared app group application */
+"Reading from" = "Читання з";
+
+/* button to disconnect from the shared app group "Disconnect" */
+"Disconnect" = "Роз'єднати";
+
+
+/* description for Shared App Group Source section */
+"Read BG from an external CGM app using a shared app group." = "Зчитуйте показники BG із зовнішнього застосунку CGM за допомогою спільної групи застосунків.";
+
+
+/* prefix before the app name on the button to start reading from shared app group */
+"Read from " = "Читати з";
+
+/* description for the backfill section in Nightscout settings screen */
+"Fetches old glucose readings from Nightscout" = "Отримує старі показники глюкози з Nightscout";
+
+/* header and button label for the 'upload old glucose' action in Nightscout settings screen */
+"Upload glucose" = "Завантажити глюкозу";
+
+/* description for the 'upload old glucose' section in Nightscout settings screen */
+"Uploads old glucose readings to Nightscout" = "Завантажує старі показники глюкози до Nightscout";
+
+/* message when uploads are enabled, but glucose uploads are disabled, in Nightscout settings screen */
+"Glucose upload disabled in CGM settings" = "Завантаження глюкози вимкнено в налаштуваннях CGM";
+
+/* header for the CGM list in CGM settings screen */
+"Connect to CGM" = "Підключення до CGM";
+
+
+/* message displayed when the pump is configured to be the CGM as well (enlite), in CGM settings screen */
+"Pump+CGM" = "Помпа+CGM";
+
+/* label for the button to remove the CGM when the pump is configured to be the CGM as well (enlite), in CGM settings screen */
+"Stop using the pump as CGM" = "Не використовувати помпу як CGM";
+
+/* hint under the CGM list in CGM settings screen */
+"To receive reading from xDrip4iOS, Glucose Direct or another compatible app, select Shared App Group CGM." = "Щоб отримувати показники з xDrip4iOS, Glucose Direct або іншої сумісної програми, виберіть «Спільна група програм CGM».";
+
+/* message displayed in pump settings screen when the pump manager reports uncertain delivery */
+"Pump delivery uncertain" = "Невизначена подача помпи";

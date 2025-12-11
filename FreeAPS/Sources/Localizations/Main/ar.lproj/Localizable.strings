@@ -17,13 +17,13 @@
 "Continue without bolus" = "متابعة دون ضخ جرعة";
 
 /* History View */
-"No data." = "No data.";
+"No data." = "لا توجد بيانات.";
 
 /* Bolus View */
-"No Predictions. Failed loop suggestion." = "No Predictions. Failed loop suggestion.";
+"No Predictions. Failed loop suggestion." = "لا توجد توقعات. فشل اقتراح الحلقة.";
 
 /* Bolus View */
-"New Glucose Missing" = "New Glucose Missing";
+"New Glucose Missing" = "القراءة الجديدة للجلوكوز مفقودة";
 
 /* Continue after added meal without bolus */
 "Save Meal without bolus" = "إضافة وجبة دون ضخ جرعة";
@@ -90,7 +90,7 @@
 "was delivered" = "تم تسليمها";
 
 /* Remote Bolus Alert, Part 3 */
-" minutes ago, triggered remotely from Nightscout, by a caregiver or a parent. Do you still want to bolus?\n\nPredicted eventual glucose, if you don't bolus, is: " = " minutes ago, triggered remotely from Nightscout, by a caregiver or a parent. Do you still want to bolus?\n\nPredicted eventual glucose, if you don't bolus, is: ";
+" minutes ago, triggered remotely from Nightscout, by a caregiver or a parent. Do you still want to bolus?\n\nPredicted eventual glucose, if you don't bolus, is: " = " قبل دقائق، تم تفعيلها عن بُعد من خلال Nightscout، بواسطة مقدم رعاية أو أحد الوالدين. هل لا تزال ترغب في إعطاء البلعة؟\n\nالقيمة المتوقعة للجلوكوز في النهاية، إذا لم تقم بالبلعة، هي ";
 
 /* Remote Bolus Alert, Title */
 "A Remote Bolus Was Just Delivered!" = "تم تسليم الجرعة عن بعد للتو!";
@@ -102,7 +102,7 @@
 "Suggested at" = "تم اقتراحه";
 
 /* Headline in enacted pop up (at: at what time) */
-"Status at" = "Status at";
+"Status at" = "الحالة عند";
 
 /* Bolus View Meal Summary Header */
 "Meal Summary" = "موجز الوجبة";
@@ -150,7 +150,7 @@
 "Home" = "الرئيسية";
 
 /* Looping in progress */
-"looping" = "looping";
+"looping" = "تشغيل الحلقة";
 
 /* min ago since last loop */
 "min ago" = "قبل دقيقة";
@@ -168,13 +168,13 @@
 "Add Carbs " = "إضافة كربونات ";
 
 /* Home View */
-"Override" = "Override";
+"Override" = "تجاوز الإعدادات";
 
 /* Home View Message if no pump is connected */
-"No Pump" = "No Pump";
+"No Pump" = "لا توجد مضخة";
 
 /* Home View Message if open loop is active */
-"Open" = "Open";
+"Open" = "فتح";
 
 /*  */
 "Amount Carbs" = "كمية الكاربوهيدرات";
@@ -191,6 +191,21 @@
 /* */
 "Are you sure?" = "هل أنت متأكد؟";
 
+/* */
+"Clear Records" = "Clear Records";
+
+/* */
+"Delete CoreData database records" = "Delete CoreData database records";
+
+/* */
+"Delete NS records" = "Delete NS records";
+
+/* */
+"All records in " = "All records in ";
+
+/* */
+" will be deleted!" = " will be deleted!";
+
 /* Bottom target temp */
 "Bottom target" = "الهدف السفلي";
 
@@ -201,7 +216,7 @@
 "Cancel Temp Target" = "إلغاء الهدف المؤقت";
 
 /*  */
-"Cancel Temporary Target" = "Cancel Temporary Target";
+"Cancel Temporary Target" = "إلغاء الهدف المؤقت";
 
 /* Custom temp target */
 "Custom" = "مخصص";
@@ -234,7 +249,7 @@
 " Your setting: " = " الإعدادات الخاصة بك: ";
 
 /* */
-"mg/dl. Autosens.max limits the max endpoint" = "mg/dl. Autosens.max limits the max endpoint";
+"mg/dl. Autosens.max limits the max endpoint" = "mg/dL. تحدد Autosens.max الحد الأقصى للنقطة النهائية";
 
 /*  */
 "Enter preset name" = "أدخل اسم التعيين المسبق";
@@ -285,7 +300,7 @@
 "Autotune" = "ضبط الانسولين التلقائي";
 
 /* Debug option view Dynamic Variables */
-"Dynamic Variables" = "Dynamic Variables";
+"Dynamic Variables" = "المتغيرات الديناميكية";
 
 /*  */
 "Basal profile" = "ملف الانسولين القاعدي";
@@ -324,7 +339,7 @@
 "Schedule" = "الجدول";
 
 /* */
-"(standard units / hour)" = "(standard units / hour)";
+"(standard units / hour)" = "(وحدات قياسية / ساعة)";
 
 /*  */
 "starts at" = "يبدأ عند";
@@ -394,151 +409,155 @@ Enact a temp Basal or a temp target */
 "Invalid URL" = "عنوان URL غير صحيح";
 
 /*  */
-"Local glucose source" = "Local glucose source";
+"Local glucose source" = "مصدر الجلوكوز المحلي";
 
 /* Header */
-"Nightscout Config" = "Nightscout Config";
+"Nightscout Config" = "تكوين Nightscout";
 
 /*  */
-"Port" = "Port";
+"Port" = "المنفذ";
 
 /*  */
 "URL" = "عنوان الرابط";
 
 /**/
-"Use local glucose server" = "Use local glucose server";
+"Use local glucose server" = "استخدام خادم الجلوكوز المحلي";
 
 /* Enable Statistics */
-"This enables uploading of statistics.json to Nightscout, which can be used by the Community Statistics and Demographics Project.\n\nParticipation in Community Statistics is opt-in, and requires separate registration at:\n" = "This enables uploading of statistics.json to Nightscout, which can be used by the Community Statistics and Demographics Project.\n\nParticipation in Community Statistics is opt-in, and requires separate registration at:\n";
+"This enables uploading of statistics.json to Nightscout, which can be used by the Community Statistics and Demographics Project.\n\nParticipation in Community Statistics is opt-in, and requires separate registration at:\n" = "يُمكّن هذا من رفع ملف statistics.json إلى Nightscout، والذي يمكن استخدامه في مشروع إحصاءات وسكان المجتمع.\n\nالمشاركة في إحصاءات المجتمع اختيارية، وتتطلب تسجيلًا منفصلًا على الرابط التالي:\n";
 
 /*  */
 "Edit settings json" = "تحرير إعدادات json";
 
 /* */
-"Glucose units" = "Glucose units";
+"Glucose units" = "وحدات الجلوكوز";
 
 /*  */
-"Preferences" = "Preferences";
+"Preferences" = "التفضيلات";
 
 /* Recommended Insulin Fraction in preferences */
-"Recommended Insulin Fraction" = "Recommended Insulin Fraction";
+"Recommended Insulin Fraction" = "نسبة الأنسولين الموصى بها";
 
 /* Do you want to show bolus screen after added carbs? */
-"Skip Bolus screen after carbs" = "Skip Bolus screen after carbs";
+"Skip Bolus screen after carbs" = "تخطي شاشة البلعة بعد إدخال الكربوهيدرات";
 
 /* Allow remote control from NS */
-"Remote control" = "Remote control";
+"Remote control" = "التحكم عن بعد";
 
 /* Allow remote control from NS */
-"Allow Remote control of iAPS" = "Allow Remote control of iAPS";
+"Allow Remote control of iAPS" = "السماح بالتحكم عن بعد في iAPS";
 
 /* Imported Profiles Alert */
-"\nNow please verify all of your new settings thoroughly:\n\n* Basal Settings\n * Carb Ratios\n * Glucose Targets\n * Insulin Sensitivities\n * DIA\n\n in iAPS Settings > Configuration.\n\nBad or invalid profile settings could have disatrous effects." = "\nNow please verify all of your new settings thoroughly:\n\n* Basal Settings\n * Carb Ratios\n * Glucose Targets\n * Insulin Sensitivities\n * DIA\n\n in iAPS Settings > Configuration.\n\nBad or invalid profile settings could have disatrous effects.";
+"\nNow please verify all of your new settings thoroughly:\n\n* Basal Settings\n * Carb Ratios\n * Glucose Targets\n * Insulin Sensitivities\n * DIA\n\n in iAPS Settings > Configuration.\n\nBad or invalid profile settings could have disatrous effects." = "\nالآن يرجى التحقق بدقة من جميع إعداداتك الجديدة:\n\n\\* إعدادات القاعدي (Basal Settings)\n \\* نسب الكربوهيدرات (Carb Ratios)\n \\* أهداف الجلوكوز (Glucose Targets)\n \\* حساسية الإنسولين (Insulin Sensitivities)\n \\* مدة فعالية الإنسولين (DIA)\n\n وذلك من خلال: إعدادات iAPS > التهيئة (Configuration).\n\nقد تؤدي إعدادات الملف الشخصي غير الصحيحة أو غير الصالحة إلى آثار خطيرة.";
 
 /* Profile Import Alert */
-"This will replace some or all of your current pump settings. Are you sure you want to import profile settings from Nightscout?" = "This will replace some or all of your current pump settings. Are you sure you want to import profile settings from Nightscout?";
+"This will replace some or all of your current pump settings. Are you sure you want to import profile settings from Nightscout?" = "سيؤدي هذا إلى استبدال بعض أو كل إعدادات المضخة الحالية لديك. هل أنت متأكد أنك تريد استيراد إعدادات الملف الشخصي من Nightscout؟";
 
 /* Import Error */
-"\nInvalid Nightcsout Basal Settings. \n\nImport aborted. Please check your Nightscout Profile Basal Settings!" = "\nInvalid Nightcsout Basal Settings. \n\nImport aborted. Please check your Nightscout Profile Basal Settings!";
+"\nInvalid Nightcsout Basal Settings. \n\nImport aborted. Please check your Nightscout Profile Basal Settings!" = "\nإعدادات القاعدي (Basal) في Nightscout غير صالحة.\n\nتم إلغاء الاستيراد. يرجى التحقق من إعدادات القاعدي في ملفك الشخصي على Nightscout!";
 
 /* Import Error */
-"\nSettings were imported but the Basals couldn't be saved to pump (No pump). Check your basal settings and tap ´Save on Pump´ to sync the new basal settings" = "\nSettings were imported but the Basals couldn't be saved to pump (No pump). Check your basal settings and tap ´Save on Pump´ to sync the new basal settings";
+"\nSettings were imported but the Basals couldn't be saved to pump (No pump). Check your basal settings and tap ´Save on Pump´ to sync the new basal settings" = "\nتم استيراد الإعدادات ولكن تعذّر حفظ القيم القاعدية (Basals) على المضخة (لا توجد مضخة).
+يرجى التحقق من إعدادات القاعدي والنقر على \"حفظ على المضخة\" (Save on Pump) لمزامنة الإعدادات القاعدية الجديدة";
 
 /* Import Error Headline */
-"Import Error" = "Import Error";
+"Import Error" = "فشل الاستيراد";
 
 /* */
-"Yes, Import" = "Yes, Import";
+"Yes, Import" = "نعم، استيراد";
 
 /* */
-"Import settings from Nightscout" = "Import settings from Nightscout";
+"Import settings from Nightscout" = "استيراد الإعدادات من Nightscout";
 
 /* */
-"Import settings?" = "Import settings?";
+"Import settings?" = "استيراد الإعدادات؟";
 
 /* */
-"Import from Nightscout" = "Import from Nightscout";
+"Import from Nightscout" = "استيراد من Nightscout";
 
 /* */
-"Settings imported" = "Settings imported";
+"Settings imported" = "تم استيراد الإعدادات";
 
 /* Import Error */
-"\nMismatching glucose units in Nightscout and Pump Settings. Import settings aborted." = "\nMismatching glucose units in Nightscout and Pump Settings. Import settings aborted.";
+"\nMismatching glucose units in Nightscout and Pump Settings. Import settings aborted." = "\nوحدات الجلوكوز غير متطابقة بين إعدادات Nightscout والمضخة.
+تم إلغاء عملية الاستيراد.";
 
 /* Import Error */
-"Can't find the default Nightscout Profile." = "Can't find the default Nightscout Profile.";
+"Can't find the default Nightscout Profile." = "تعذّر العثور على الملف الشخصي الافتراضي في Nightscout.";
 
 /* Add Blood Glucose Test, header */
-"Blood Glucose Test" = "Blood Glucose Test";
+"Blood Glucose Test" = "اختبار سكر الدم";
 
 /* Add Medtronic pump */
-"Add Medtronic" = "Add Medtronic";
+"Add Medtronic" = "إضافة Medtronic";
 
 /* Add Omnipod pump */
-"Add Omnipod" = "Add Omnipod";
+"Add Omnipod" = "إضافة Omnipod";
 
 /* Add Dana-i/RS pump */
-"Add Dana-i/RS" = "Add Dana-i/RS";
+"Add Dana-i/RS" = "إضافة Dana-i/RS";
 
 /* Add Simulator pump */
-"Add Simulator" = "Add Simulator";
+"Add Simulator" = "إضافة محاكي";
 
 /* View/Header when pod expired */
-"Replace" = "Replace";
+"Replace" = "استبدال";
 
 /* Insulin model */
-"Model" = "Model";
+"Model" = "الطراز";
 
 /*  */
-"Pump config" = "Pump config";
+"Pump config" = "تهيئة المضخة (Pump Config)";
 
 /*  */
-"Delivery limits" = "Delivery limits";
+"Delivery limits" = "حدود الجرعات (Delivery Limits)";
 
 /*  */
-"Duration of Insulin Action" = "Duration of Insulin Action";
+"Duration of Insulin Action" = "مدة فعالية الإنسولين (Duration of Insulin Action)";
 
 /* hours of duration of insulin activity */
-"hours" = "hours";
+"hours" = "ساعات";
 
 /* Max setting */
-"Max Basal" = "Max Basal";
+"Max Basal" = "الحد الأقصى للقاعدي (Max Basal)";
 
 /* Max setting */
-"Max Bolus" = "Max Bolus";
+"Max Bolus" = "الحد الأقصى للبلعة (Max Bolus)";
 
 /* Insulin alert message */
-"Please verify that you have selected the correct insulin concentration before saving your settings.\n\nThe insulin vial or pen should indicate the concentration in units per milliliter (e.g., U100 indicates 100 units per milliliter, which is the standard concentration).\n\nAccurate selection is critical for proper dosing." = "Please verify that you have selected the correct insulin concentration before saving your settings.\n\nThe insulin vial or pen should indicate the concentration in units per milliliter (e.g., U100 indicates 100 units per milliliter, which is the standard concentration).\n\nAccurate selection is critical for proper dosing.";
+"Please verify that you have selected the correct insulin concentration before saving your settings.\n\nThe insulin vial or pen should indicate the concentration in units per milliliter (e.g., U100 indicates 100 units per milliliter, which is the standard concentration).\n\nAccurate selection is critical for proper dosing." = "يرجى التأكد من أنك قد اخترت تركيز الإنسولين الصحيح قبل حفظ الإعدادات.
+يجب أن تشير قنينة الإنسولين أو القلم إلى التركيز بوحدات لكل ملليلتر (على سبيل المثال، U100 تعني 100 وحدة لكل ملليلتر، وهو التركيز القياسي).
+الاختيار الدقيق ضروري لضمان الجرعات الصحيحة.";
 
 /* Insulin Concentration View */
-"Concentration" = "Concentration";
+"Concentration" = "التركيز";
 
 /* Insulin Concentration View */
-"Insulin Concentration" = "Insulin Concentration";
+"Insulin Concentration" = "تركيز الإنسولين";
 
 /* Insulin Concentration View */
-"Change Insulin" = "Change Insulin";
+"Change Insulin" = "تغيير الإنسولين";
 
 /* Insulin Concentration View */
-"Insulin diluted to" = "Insulin diluted to";
+"Insulin diluted to" = "تم تخفيف الإنسولين إلى";
 
 /* Insulin Concentration View */
-"standard concentration:" = "standard concentration:";
+"standard concentration:" = "التركيز القياسي:";
 
 /* Insulin Concentration View */
-"units per ml" = "units per ml";
+"units per ml" = "وحدات لكل ملليلتر (وحدة/مل)";
 
 /* Insulin Concentration View */
-"Standard concentration (U 100)" = "Standard concentration (U 100)";
+"Standard concentration (U 100)" = "التركيز القياسي (U100): 100 وحدة لكل ملليلتر";
 
 /* Insulin Concentration View */
-"Insulin concentration increased to" = "Insulin concentration increased to";
+"Insulin concentration increased to" = "تم رفع تركيز الإنسولين إلى:";
 
 /* Insulin Concentration View */
-"Couldn't save to pump. Try again when pump isn't busy bolusing." = "Couldn't save to pump. Try again when pump isn't busy bolusing.";
+"Couldn't save to pump. Try again when pump isn't busy bolusing." = "تعذّر الحفظ على المضخة. حاول مرة أخرى عندما لا تكون المضخة مشغولة بإعطاء بلعة (Bolus).";
 
 /* Insulin Concentration View */
-"Saved" = "Saved";
+"Saved" = "تم الحفظ";
 
 /* Label inusulin concentration, units per ml */
 "U100" = "U100";
@@ -552,42 +571,42 @@ Enact a temp Basal or a temp target */
 /* Label inusulin concentration, units per ml */
 "U10" = "U10";
 /* Debug option, allow U50 and U10 (diluted insulin) */
-"Allow diluted insulin concentration settings" = "Allow diluted insulin concentration settings";
+"Allow diluted insulin concentration settings" = "السماح بإعدادات تركيز الإنسولين المخفف";
 /* Max setting */
-"Max Carbs" = "Max Carbs";
+"Max Carbs" = "الحد الأقصى للكربوهيدرات (Max Carbs)";
 
 /* Max carbs description */
-"Maximum amount of carbs (g) you can add each entry" = "Maximum amount of carbs (g) you can add each entry";
+"Maximum amount of carbs (g) you can add each entry" = "الحد الأقصى لكمية الكربوهيدرات (غرام) التي يمكنك إضافتها في كل إدخال";
 
 /* */
-"Pump Settings" = "Pump Settings";
+"Pump Settings" = "إعدادات المضخة";
 
 /* Insulin unit per hour */
-"U/hr" = "U/hr";
+"U/hr" = "وحدة لكل ساعة";
 
 /* Unit in number of units delivered (keep the space character!) */
-" U" = " U";
+" U" = " وحدة";
 
 /* /Insulin unit */
-"/U" = "/U";
+"/U" = "/وحدة";
 
 /* Insulin unit */
 "U" = "U";
 
 /* Unit per hour with space */
-" U/hr" = " U/hr";
+" U/hr" = " وحدة/ساعة";
 
 /* Number of units per hour*/
-"%@ U/hr" = "%@ U/hr";
+"%@ U/hr" = "%@ وحدة لكل ساعة";
 
 /* Number of units insulin delivered */
-"%@ U" = "%@ U";
+"%@ U" = "%@ وحدة";
 
 /*Carb ratio unit */
-"g/U" = "g/U";
+"g/U" = "غرام لكل وحدة";
 
 /* grams */
-" g" = " g";
+" g" = " ج";
 
 /* The short unit display string for grams */
 "g" = "ج";
@@ -629,7 +648,7 @@ Enact a temp Basal or a temp target */
 "Display on Watch" = "عرض على الساعة";
 
 /* */
-"Display either Overrides or Temp Targets" = "Display either Overrides or Temp Targets";
+"Display either Overrides or Temp Targets" = "عرض إما التجاوزات أو الأهداف المؤقتة";
 
 /* */
 "Garmin Watch" = "ساعة جارمين";
@@ -638,7 +657,7 @@ Enact a temp Basal or a temp target */
 "Add devices" = "إضافة أجهزة";
 
 /* */
-"Profile Overrides Button / Temp Targets Button" = "Profile Overrides Button / Temp Targets Button";
+"Profile Overrides Button / Temp Targets Button" = "زر تجاوز الملف الشخصي / الهدف المؤقت";
 
 /* */
 "Glucose Target" = "هدف الجلوكوز";
@@ -653,7 +672,7 @@ Enact a temp Basal or a temp target */
 "ISF" = "عامل حساسية الأنسولين";
 
 /* */
-"% Override" = "% Override";
+"% Override" = "% تجاوز الإعدادات";
 
 /* */
 "The app Garmin Connect must be installed to use for iAPS.\n Go to App Store to download it" = "The app Garmin Connect must be installed to use for iAPS.\n Go to App Store to download it";
@@ -728,19 +747,19 @@ Enact a temp Basal or a temp target */
 "Treatments" = "العلاجات";
 
 /* Add Insulin */
-"Add Insulin" = "Add Insulin";
+"Add Insulin" = "إضافة إنسولين";
 
 /* Add Glucose */
-"Add Glucose" = "Add Glucose";
+"Add Glucose" = "إضافة جلوكوز";
 
 /* New Glucose */
-"New Glucose" = "New Glucose";
+"New Glucose" = "جلوكوز جديد";
 
 /* Hypo Treatment Preset */
-"Treatment" = "Treatment";
+"Treatment" = "العلاج";
 
 /* Hypo Treatment Default Value */
-"Default  📉" = "Default  📉";
+"Default  📉" = "الافتراضي";
 
 /* Hypo Treatment Default Value */
 "None" = "None";
@@ -770,7 +789,7 @@ Enact a temp Basal or a temp target */
 "Automatic" = "تلقائي";
 
 /* External insulin treatments */
-"External" = "External";
+"External" = "خارجي";
 
 /* */
 "Other" = "أخرى";
@@ -785,16 +804,16 @@ Enact a temp Basal or a temp target */
 "Bluetooth Transmitters" = "Bluetooth Transmitters";
 
 /* */
-"Modes" = "Modes";
+"Modes" = "الطراز";
 
 /* Libre 2 Direct */
 "Libre 2 Direct" = "Libre 2 Direct";
 
 /* */
-"Select the third party transmitter you want to connect to" = "Select the third party transmitter you want to connect to";
+"Select the third party transmitter you want to connect to" = "حدد مرسل الطرف الثالث الذي تريد الاتصال به";
 
 /* State was restored */
-"State was restored" = "State was restored";
+"State was restored" = "تم استعادة الحالة";
 
 /* The short unit display string for millimoles of glucose per liter */
 "mmol/L" = "mmol/L";
@@ -803,34 +822,34 @@ Enact a temp Basal or a temp target */
 "mg/dL" = "mg/dL";
 
 /* */
-"Add calibration" = "Add calibration";
+"Add calibration" = "إضافة معايرة";
 
 /* When adding capillary glucose meater reading */
 "Meter glucose" = "Meter glucose";
 
 /* */
-"Info" = "Info";
+"Info" = "معلومات";
 
 /*v*/
-"Slope" = "Slope";
+"Slope" = "الميل";
 
 /* */
 "Intercept" = "Intercept";
 
 /* */
-"Chart" = "Chart";
+"Chart" = "الرسم البياني";
 
 /* */
-"Remove" = "Remove";
+"Remove" = "إزالة";
 
 /* */
-"Remove Last" = "Remove Last";
+"Remove Last" = "إزالة الأخير";
 
 /* */
-"Remove All" = "Remove All";
+"Remove All" = "حذف الكل";
 
 /* */
-"About the Process" = "About the Process";
+"About the Process" = "حول هذه العملية";
 
 /* */
 "Please make sure that your Libre 2 sensor is already activated and finished warming up. If you have other apps connecting to the sensor via bluetooth, these need to be shut down or uninstalled. \n\n You can only have one app communicating with the sensor via bluetooth. Then press the \"pariring and connection\" button below to start the process. Please note that the bluetooth connection might take up to a couple of minutes before it starts working." = "Please make sure that your Libre 2 sensor is already activated and finished warming up. If you have other apps connecting to the sensor via bluetooth, these need to be shut down or uninstalled. \n\n You can only have one app communicating with the sensor via bluetooth. Then press the \"pariring and connection\" button below to start the process. Please note that the bluetooth connection might take up to a couple of minutes before it starts working.";
@@ -887,37 +906,37 @@ Enact a temp Basal or a temp target */
 "HIGHALERT!" = "HIGHALERT!";
 
 /* (Snoozed)*/
-"(Snoozed)" = "(Snoozed)";
+"(Snoozed)" = "(مؤجل)";
 
 /* Glucose: %@ */
-"Glucose: %@" = "Glucose: %@";
+"Glucose: %@" = "جلوكوز: %@";
 
 /* Transmitter: %@%% */
-"Transmitter: %@%%" = "Transmitter: %@%%";
+"Transmitter: %@%%" = "المرسل: %@%%";
 
 /* No Sensor Detected */
-"No Sensor Detected" = "No Sensor Detected";
+"No Sensor Detected" = "لم يتم الكشف عن أي مستشعر";
 
 /* This might be an intermittent problem, but please check that your transmitter is tightly secured over your sensor */
-"This might be an intermittent problem, but please check that your transmitter is tightly secured over your sensor" = "This might be an intermittent problem, but please check that your transmitter is tightly secured over your sensor";
+"This might be an intermittent problem, but please check that your transmitter is tightly secured over your sensor" = "قد تكون هذه مشكلة متقطعة، ولكن يُرجى التحقق من أن المرسل مثبت بإحكام فوق المستشعر";
 
 /* New Sensor Detected */
-"New Sensor Detected" = "New Sensor Detected";
+"New Sensor Detected" = "تم اكتشاف مستشعر جديد";
 
 /* Please wait up to 30 minutes before glucose readings are available! */
-"Please wait up to 30 minutes before glucose readings are available!" = "Please wait up to 30 minutes before glucose readings are available!";
+"Please wait up to 30 minutes before glucose readings are available!" = "يرجى الانتظار حتى 30 دقيقة قبل أن تتوفر قراءات الجلوكوز!";
 
 /* Invalid Glucose sample detected, try again later */
-"Invalid Glucose sample detected, try again later" = "Invalid Glucose sample detected, try again later";
+"Invalid Glucose sample detected, try again later" = "تم اكتشاف عينة جلوكوز غير صالحة، يرجى المحاولة مرة أخرى لاحقًا";
 
 /* ensor might have temporarily stopped, fallen off or is too cold or too warm */
-"Sensor might have temporarily stopped, fallen off or is too cold or too warm" = "Sensor might have temporarily stopped, fallen off or is too cold or too warm";
+"Sensor might have temporarily stopped, fallen off or is too cold or too warm" = "قد يكون المستشعر قد توقف مؤقتًا، أو سقط، أو أنه بارد جدًا أو ساخن جدًا.";
 
 /* Invalid Sensor Detected */
-"Invalid Sensor Detected" = "Invalid Sensor Detected";
+"Invalid Sensor Detected" = "تم الكشف عن مستشعر غير صالح";
 
 /* Detected sensor seems not to be a libre 1 sensor! */
-"Detected sensor seems not to be a libre 1 sensor!" = "Detected sensor seems not to be a libre 1 sensor!";
+"Detected sensor seems not to be a libre 1 sensor!" = "المستشعر المُكتشف لا يبدو أنه من نوع Libre 1!";
 
 /* Detected sensor is invalid: %@ */
 "Detected sensor is invalid: %@" = "المستشعر المكتشف غير صالح: %@";
@@ -956,7 +975,7 @@ Enact a temp Basal or a temp target */
 "Last measurement" = "القياس الأخير";
 
 /* */
-"Sensor Footer checksum" = "Sensor Footer checksum";
+"Sensor Footer checksum" = "رمز التحقق من تذييل المستشعر (Sensor Footer Checksum)";
 
 /* */
 "Last Blood Sugar prediction" = "آخر تنبؤ بمستوى الجلوكوز في الدم";
@@ -968,10 +987,10 @@ Enact a temp Basal or a temp target */
 "Sensor Info" = "معلومات المستشعر";
 
 /* */
-"Sensor Life-Span" = "Sensor Life-Span";
+"Sensor Life-Span" = "عمر المستشعر (Sensor Life-Span)";
 
 /* */
-"When using %@ iAPS doesn't know the type of sensor used or the sensor life-span." = "When using %@ iAPS doesn't know the type of sensor used or the sensor life-span.";
+"When using %@ iAPS doesn't know the type of sensor used or the sensor life-span." = "عند استخدام %@، لا يمكن لتطبيق iAPS معرفة نوع المستشعر المستخدم أو عمره الافتراضي (عمر المستشعر).";
 
 /* */
 "Sensor Age Left" = "عمر المستشعر المتبقي";
@@ -1013,13 +1032,13 @@ Enact a temp Basal or a temp target */
 "Edit calibrations" = "تعديل المعايرات";
 
 /* */
-"edit calibration clicked" = "edit calibration clicked";
+"edit calibration clicked" = "تم النقر على \"تعديل المعايرة\" (Edit Calibration)";
 
 /* */
 "Delete CGM" = "حذف المستشعر";
 
 /* */
-"Are you sure you want to remove this cgm from iAPS?" = "Are you sure you want to remove this cgm from iAPS?";
+"Are you sure you want to remove this cgm from iAPS?" = "هل أنت متأكد أنك تريد إزالة جهاز مراقبة الجلوكوز المستمر (Cgm) هذا من iAPS؟";
 
 /* */
 "There is no undo" = "لا يوجد تراجع!";
@@ -1073,10 +1092,10 @@ Enact a temp Basal or a temp target */
 "Adds Transmitter Battery" = "إضافة بطارية جهاز الإرسال";
 
 /* */
-"Also vibrate" = "Also vibrate";
+"Also vibrate" = "اهتزاز أيضًا";
 
 /* */
-"Additional notification types" = "Additional notification types";
+"Additional notification types" = "أنواع الإشعارات الإضافية";
 
 /* */
 "Misc" = "Misc";
@@ -1519,14 +1538,14 @@ Enact a temp Basal or a temp target */
 "Connect to Apple Health" = "Connect to Apple Health";
 
 /* Show when have not permissions for writing to Health */
-"For write data to Apple Health you must give permissions in Settings > Health > Data Access" = "For write data to Apple Health you must give permissions in Settings > Health > Data Access";
+"To allow iAPS to write data to Apple Health, you must grant permission in Settings > Health > Data Access." = "To allow iAPS to write data to Apple Health, you must grant permission in Settings > Health > Data Access.";
 
 /* */
-"This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access. If you enter a glucose value into Apple Health, open iAPS to confirm it shows up." = "This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access. If you enter a glucose value into Apple Health, open iAPS to confirm it shows up.";
+"This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access." = "This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access.";
 
 /* New ALerts ------------------------- */
 /* Info title */
-"Info" = "Info";
+"Info" = "معلومات";
 
 /* Warning title */
 "Warning" = "Warning";
@@ -1909,10 +1928,10 @@ Enact a temp Basal or a temp target */
 "No confidence reminders are used." = "No confidence reminders are used.";
 
 /* Description for BeepPreference.manualCommands */
-"Confidence reminders will sound for commands you initiate, like bolus, cancel bolus, suspend, resume, save notification reminders, etc. When the app automatically adjusts delivery, no confidence reminders are used." = "Confidence reminders will sound for commands you initiate, like bolus, cancel bolus, suspend, resume, save notification reminders, etc. When the app automatically adjusts delivery, no confidence reminders are used.";
+"Confidence reminders will sound for commands you initiate, like bolus, cancel bolus, suspend, resume, save notification reminders, etc. When the app automatically adjusts delivery, no confidence reminders are used." = "ستصدر تذكيرات التأكيد عند تنفيذ الأوامر التي تبدأها بنفسك، مثل إعطاء البلعة، أو إلغاء البلعة، أو الإيقاف المؤقت، أو الاستئناف، أو حفظ تذكيرات الإشعارات، وغيرها. أما عند قيام التطبيق بضبط الجرعات تلقائيًا، فلن يتم استخدام تذكيرات التأكيد.";
 
 /* Description for BeepPreference.extended */
-"Confidence reminders will sound when the app automatically adjusts delivery as well as for commands you initiate." = "Confidence reminders will sound when the app automatically adjusts delivery as well as for commands you initiate.";
+"Confidence reminders will sound when the app automatically adjusts delivery as well as for commands you initiate." = "ستصدر تذكيرات التأكيد عند قيام التطبيق بضبط الجرعات تلقائيًا، وكذلك عند تنفيذ الأوامر التي تبدأها بنفسك.";
 
 /* Label text for expiration reminder default row */
 "Expiration Reminder Default" = "Expiration Reminder Default";
@@ -2177,8 +2196,8 @@ Enact a temp Basal or a temp target */
 /* HbA1c for all glucose storage days */
 "all" = "all";
 
-/* Active Insulin View */
-"Active Insulin" = "Active Insulin";
+/* IOB View */
+"Insulin on Board" = "Insulin on Board";
 
 /* Active Insulin View */
 "Time with negative insulin" = "Time with negative insulin";
@@ -2201,8 +2220,14 @@ Enact a temp Basal or a temp target */
 /* Active Insulin View */
 "TDD 3 days ago" = "TDD 3 days ago";
 
-/* Active Carbohydrates View */
-"Active Carbohydrates" = "Active Carbohydrates";
+/* COB View */
+"Carbohydrates on Board" = "Carbohydrates on Board";
+
+/* UI/UX-setting */
+"Display COB Chart" = "Display COB Chart";
+
+/* UI/UX-setting */
+"Display Insulin Activity Chart" = "Display Insulin Activity Chart";
 
 /* --------------------------------------------------------  Dexcom G7 --------------------------------------*/
 
@@ -2859,7 +2884,7 @@ Enact a temp Basal or a temp target */
 "Remaining Carbs Cap" = "Remaining Carbs Cap";
 
 /* "Remaining Carbs Cap" */
-"This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption." = "This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption.";
+"This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption. Maximum 90" = "This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption. Maximum 90";
 
 /* Headline ”Max SMB Basal Minutes" */
 "Max SMB Basal Minutes" = "Max SMB Basal Minutes";
@@ -3091,10 +3116,16 @@ Enact a temp Basal or a temp target */
 "Display Sensor Age" = "Display Sensor Age";
 
 /* UI/UX option */
+"Display Sensor Time Remaining" = "Display Sensor Time Remaining";
+
+/* UI/UX option */
 "Hide Concentration Badge" = "Hide Concentration Badge";
 
 /* UI/UX option */
 "Use insulin bars" = "Use insulin bars";
+
+/* UI/UX option */
+"Use carb bars" = "Use carb bars";
 
 /* UI/UX option */
 "Hide the bolus amount strings when amount is under" = "Hide the bolus amount strings when amount is under";
@@ -3106,16 +3137,10 @@ Enact a temp Basal or a temp target */
 "Display carb equivalent amount" = "Display carb equivalent amount";
 
 /* UI/UX option */
-"Display Sensor Time Remaining" = "Display Sensor Time Remaining";
-
-/* UI/UX option */
-"Display Sensor Age, but not Time Remaining" = "Display Sensor Age, but not Time Remaining";
-
-/* UI/UX option */
 "Display Ratio and a History View button" = "Display Ratio and a History View button";
 
 /* UI/UX option */
-"Auto ISF Home View" = "Auto ISF Home View";
+"Home View Ratio Button" = "Home View Ratio Button";
 
 /* UI/UX option */
 "Light" = "Light";
@@ -3131,6 +3156,12 @@ Enact a temp Basal or a temp target */
 
 /* UI/UX option */
 "Light / Dark Mode" = "Light / Dark Mode";
+
+/* Debug option */
+"Neglect Carbohydrates in oref0" = "Neglect Carbohydrates in oref0";
+
+/* Debug option */
+"Hide oref0 Predictions" = "Hide oref0 Predictions";
 
 /* Setting title */
 "Bolus Calculator" = "Bolus Calculator";
@@ -3209,3 +3240,57 @@ Enact a temp Basal or a temp target */
 
 /* Headline "To enable settings, go to the App Config section in iOS Settings App" */
 "To enable settings, go to the App Config section in iOS Settings App" = "To enable settings, go to the App Config section in iOS Settings App";
+
+/* Section header in CGM view */
+"Active CGM" = "Active CGM";
+
+/* pump name label, when pump is a cgm "Pump/CGM" */
+"Pump/CGM" = "Pump/CGM";
+
+/* Button "Stop using the pump as CGM" */
+"Stop using the pump as CGM" = "Stop using the pump as CGM";
+
+/* Section header in CGM view */
+"Shared App Group Source" = "Shared App Group Source";
+
+/* prefix for the shared app group application */
+"Reading from" = "Reading from";
+
+/* button to disconnect from the shared app group "Disconnect" */
+"Disconnect" = "Disconnect";
+
+
+/* description for Shared App Group Source section */
+"Read BG from an external CGM app using a shared app group." = "Read BG from an external CGM app using a shared app group.";
+
+
+/* prefix before the app name on the button to start reading from shared app group */
+"Read from " = "Read from ";
+
+/* description for the backfill section in Nightscout settings screen */
+"Fetches old glucose readings from Nightscout" = "Fetches old glucose readings from Nightscout";
+
+/* header and button label for the 'upload old glucose' action in Nightscout settings screen */
+"Upload glucose" = "Upload glucose";
+
+/* description for the 'upload old glucose' section in Nightscout settings screen */
+"Uploads old glucose readings to Nightscout" = "Uploads old glucose readings to Nightscout";
+
+/* message when uploads are enabled, but glucose uploads are disabled, in Nightscout settings screen */
+"Glucose upload disabled in CGM settings" = "Glucose upload disabled in CGM settings";
+
+/* header for the CGM list in CGM settings screen */
+"Connect to CGM" = "Connect to CGM";
+
+
+/* message displayed when the pump is configured to be the CGM as well (enlite), in CGM settings screen */
+"Pump+CGM" = "Pump+CGM";
+
+/* label for the button to remove the CGM when the pump is configured to be the CGM as well (enlite), in CGM settings screen */
+"Stop using the pump as CGM" = "Stop using the pump as CGM";
+
+/* hint under the CGM list in CGM settings screen */
+"To receive reading from xDrip4iOS, Glucose Direct or another compatible app, select Shared App Group CGM." = "To receive reading from xDrip4iOS, Glucose Direct or another compatible app, select Shared App Group CGM.";
+
+/* message displayed in pump settings screen when the pump manager reports uncertain delivery */
+"Pump delivery uncertain" = "Pump delivery uncertain";

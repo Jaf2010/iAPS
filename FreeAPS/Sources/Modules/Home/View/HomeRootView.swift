@@ -9,7 +9,7 @@ extension Home {
     struct RootView: BaseView {
         let resolver: Resolver
 
-        @StateObject var state = StateModel()
+        @StateObject var state: StateModel
         @State var isStatusPopupPresented = false
         @State var showCancelAlert = false
         @State var showCancelTTAlert = false
@@ -56,47 +56,61 @@ extension Home {
             sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)]
         ) var onboarded: FetchedResults<Onboarding>
 
-        private var numberFormatter: NumberFormatter {
+        private let numberFormatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.maximumFractionDigits = 2
             return formatter
-        }
+        }()
 
-        private var fetchedTargetFormatter: NumberFormatter {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            if state.data.units == .mmolL {
-                formatter.maximumFractionDigits = 1
-            } else { formatter.maximumFractionDigits = 0 }
-            return formatter
-        }
-
-        private var targetFormatter: NumberFormatter {
+        private let fetchedTargetFormatterMmol: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.maximumFractionDigits = 1
             return formatter
-        }
+        }()
 
-        private var tirFormatter: NumberFormatter {
+        private let fetchedTargetFormatterMgdl: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.maximumFractionDigits = 0
             return formatter
+        }()
+
+        private var fetchedTargetFormatter: NumberFormatter {
+            state.data.units == .mmolL ? fetchedTargetFormatterMmol : fetchedTargetFormatterMgdl
         }
 
-        private var dateFormatter: DateFormatter {
+        private let targetFormatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 1
+            return formatter
+        }()
+
+        private let tirFormatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 0
+            return formatter
+        }()
+
+        private let dateFormatter: DateFormatter = {
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = .short
             return dateFormatter
-        }
+        }()
 
         private var spriteScene: SKScene {
             let scene = SnowScene()
             scene.scaleMode = .resizeFill
             scene.backgroundColor = .clear
             return scene
+        }
+
+        init(resolver: Resolver) {
+            self.resolver = resolver
+            _state = StateObject(wrappedValue: StateModel(resolver: resolver))
         }
 
         var glucoseView: some View {
@@ -109,8 +123,9 @@ extension Home {
                 highGlucose: $state.data.highGlucose,
                 alwaysUseColors: $state.alwaysUseColors,
                 displayDelta: $state.displayDelta,
-                scrolling: $displayGlucose,
-                displayExpiration: $state.displayExpiration, cgm: $state.cgm, sensordays: $state.sensorDays, anubis: $state.anubis
+                scrolling: $displayGlucose, displaySAGE: $state.displaySAGE,
+                displayExpiration: $state.displayExpiration,
+                sensordays: $state.sensorDays
             )
             .onTapGesture {
                 if state.alarm == nil {
@@ -164,7 +179,6 @@ extension Home {
                 impactHeavy.impactOccurred()
                 state.runLoop()
             }
-            .offset(y: 10)
         }
 
         var tempBasalString: String {
@@ -381,7 +395,7 @@ extension Home {
                 }
             }
             .confirmationDialog("Bolus already in Progress", isPresented: $showBolusActiveAlert) {
-                Button("Bolus already in Progress!", role: .cancel) {
+                Button("Bolus already in Progress!", role: .destructive) {
                     showBolusActiveAlert = false
                 }
             }
@@ -416,7 +430,7 @@ extension Home {
                         materialOpacity: materialOpacity
                     )
                     .frame(width: 12, height: 38)
-                    .offset(x: 0, y: -5)
+                    .offset(y: -5)
                     HStack(spacing: 0) {
                         if let loop = state.data.suggestion, let cob = loop.cob {
                             Text(numberFormatter.string(from: cob as NSNumber) ?? "0")
@@ -426,14 +440,14 @@ extension Home {
                             Text("?").font(.statusFont).bold()
                         }
                         Text(NSLocalizedString(" g", comment: "gram of carbs")).font(.statusFont).foregroundStyle(.secondary)
-                    }.offset(x: 0, y: 5)
+                    }.offset(y: 5)
                 }
                 // Instead of Spacer
                 Text(" ")
 
                 // Insulin on Board
                 HStack {
-                    let substance = Double(state.data.suggestion?.iob ?? 0)
+                    let substance = Double(state.data.iob ?? 0)
                     let max = max(Double(state.maxIOB), 1)
                     let fraction: Double = 1 - abs(substance) / max
                     let fill = CGFloat(min(Swift.max(fraction, 0.05), 1))
@@ -444,9 +458,9 @@ extension Home {
                         materialOpacity: materialOpacity
                     )
                     .frame(width: 12, height: 38)
-                    .offset(x: 0, y: -5)
+                    .offset(y: -5)
                     HStack(spacing: 0) {
-                        if let loop = state.data.suggestion, let iob = loop.iob {
+                        if let iob = state.data.iob {
                             Text(
                                 targetFormatter.string(from: iob as NSNumber) ?? "0"
                             ).font(.statusFont).bold()
@@ -454,10 +468,9 @@ extension Home {
                             Text("?").font(.statusFont).bold()
                         }
                         Text(NSLocalizedString(" U", comment: "Insulin unit")).font(.statusFont).foregroundStyle(.secondary)
-                    }.offset(x: 0, y: 5)
+                    }.offset(y: 5)
                 }
-            }
-            .offset(y: 5)
+            }.offset(x: 5, y: 5)
         }
 
         var preview: some View {
@@ -569,7 +582,8 @@ extension Home {
                                 }
                             } else { Text("📉") } // Hypo Treatment is not actually a preset
                         } else if override.percentage != 100 {
-                            Text(override.percentage.formatted() + " %").font(.statusFont).foregroundStyle(.secondary)
+                            Text((tirFormatter.string(from: override.percentage as NSNumber) ?? "") + " %").font(.statusFont)
+                                .foregroundStyle(.secondary)
                         } else if override.smbIsOff, !override.smbIsAlwaysOff {
                             Text("No ").font(.statusFont).foregroundStyle(.secondary) // "No" as in no SMBs
                             Image(systemName: "syringe")
@@ -625,8 +639,15 @@ extension Home {
                     VStack {
                         ZStack {
                             if !displayGlucose {
-                                glucoseView.frame(maxHeight: .infinity, alignment: .center).offset(y: -10)
-                                loopView.frame(maxWidth: .infinity, alignment: .leading).offset(x: 40, y: -30)
+                                glucoseView.frame(maxHeight: .infinity, alignment: .center).offset(y: -5)
+                                loopView
+                                    .frame(
+                                        maxWidth: .infinity,
+                                        maxHeight: .infinity,
+                                        alignment: .topLeading
+                                    )
+                                    .padding(20)
+                                    .offset(x: 5, y: -10)
                             }
                             if displayGlucose {
                                 glucoseView.frame(maxHeight: .infinity, alignment: .center).offset(y: -10)
@@ -717,9 +738,15 @@ extension Home {
 
         private var isfView: some View {
             ZStack {
-                HStack {
-                    Image(systemName: "divide").font(.system(size: 16)).foregroundStyle(.teal)
-                    Text("\(state.data.suggestion?.sensitivityRatio ?? 1)").foregroundStyle(.primary)
+                HStack(spacing: 4) {
+                    Image(systemName: "divide")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.teal)
+
+                    Text(String(describing: state.data.suggestion?.sensitivityRatio ?? 1))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1) // maximum 1 row
+                        .fixedSize(horizontal: true, vertical: false) // Prevent wrapping
                 }
                 .font(.timeSettingFont)
                 .background(TimeEllipse(characters: 10))
@@ -730,7 +757,8 @@ extension Home {
                         displayDynamicHistory.toggle()
                     }
                 }
-            }.offset(x: 130)
+            }
+            .offset(x: 130)
         }
 
         private var animateLoopView: Bool {
@@ -753,6 +781,8 @@ extension Home {
             ActivityIndicator(isAnimating: .constant(true), style: .large)
         }
 
+        @Environment(\.scenePhase) private var scenePhase
+
         var body: some View {
             GeometryReader { geo in
                 if onboarded.first?.firstRun ?? true, let openAPSSettings = state.openAPSSettings {
@@ -766,13 +796,9 @@ extension Home {
                             VStack {
                                 // Main Chart
                                 chart
-                                // Adjust hours visible (X-Axis) and optional ratio display
-                                if state.extended {
-                                    timeSetting
-                                        .overlay { isfView }
-                                } else {
-                                    timeSetting
-                                }
+                                // Adjust hours visible (X-Axis) and ratio display
+                                timeSetting
+                                    .overlay { isfView }
                                 // TIR Chart
                                 if !state.data.glucose.isEmpty {
                                     preview.padding(.top, 15)
@@ -780,6 +806,7 @@ extension Home {
                                 // Loops Chart
                                 loopPreview.padding(.vertical, 15)
 
+                                // COB Chart
                                 if state.carbData > 0 {
                                     activeCOBView
                                 }
@@ -826,14 +853,23 @@ extension Home {
                             .offset(y: -100)
                         }
                     }
+                    .onChange(of: scenePhase) {
+                        switch scenePhase {
+                        case .active:
+                            state.startTimer()
+                        case .background,
+                             .inactive:
+                            state.stopTimer()
+                        default:
+                            break
+                        }
+                    }
                 }
             }
             .onAppear {
                 if onboarded.first?.firstRun ?? true {
                     state.fetchPreferences()
                 }
-
-                configureView()
             }
             .navigationTitle("Home")
             .navigationBarHidden(true)

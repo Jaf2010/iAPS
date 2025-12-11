@@ -4,7 +4,12 @@ import Swinject
 extension UIUX {
     struct RootView: BaseView {
         let resolver: Resolver
-        @StateObject var state = StateModel()
+        @StateObject var state: StateModel
+
+        init(resolver: Resolver) {
+            self.resolver = resolver
+            _state = StateObject(wrappedValue: StateModel(resolver: resolver))
+        }
 
         private var glucoseFormatter: NumberFormatter {
             let formatter = NumberFormatter()
@@ -37,6 +42,8 @@ extension UIUX {
                     Toggle("Display Chart X - Grid lines", isOn: $state.xGridLines)
                     Toggle("Display Chart Y - Grid lines", isOn: $state.yGridLines)
                     Toggle("Display Chart Threshold lines for Low and High", isOn: $state.rulerMarks)
+                    Toggle("Display Insulin Activity Chart", isOn: $state.showInsulinActivity)
+                    Toggle("Display COB Chart", isOn: $state.showCobChart)
                     Toggle("Standing / Laying TIR Chart", isOn: $state.oneDimensionalGraph)
                     HStack {
                         Text("Horizontal Scroll View Visible hours")
@@ -45,6 +52,7 @@ extension UIUX {
                         Text("hours").foregroundColor(.secondary)
                     }
                     Toggle("Use insulin bars", isOn: $state.useInsulinBars)
+                    Toggle("Use carb bars", isOn: $state.useCarbBars)
                     HStack {
                         Text("Hide the bolus amount strings when amount is under")
                         Spacer()
@@ -55,6 +63,7 @@ extension UIUX {
                     if state.fpus {
                         Toggle("Display carb equivalent amount", isOn: $state.fpuAmounts)
                     }
+                    Toggle("Hide oref0 Predictions", isOn: $state.hidePredictions)
 
                 } header: { Text("Home Chart settings ") }
 
@@ -67,14 +76,17 @@ extension UIUX {
                 Section {
                     Toggle("Never display the small glucose chart when scrolling", isOn: $state.skipGlucoseChart)
                     Toggle("Always Color Glucose Value (green, yellow etc)", isOn: $state.alwaysUseColors)
-                    Toggle("Display Sensor Time Remaining", isOn: $state.displayExpiration)
                     Toggle("Display Glucose Delta", isOn: $state.displayDelta)
                     Toggle("Hide Concentration Badge", isOn: $state.hideInsulinBadge)
+                    Toggle("Display Sensor Age", isOn: $state.displaySAGE)
+                    Toggle("Display Sensor Time Remaining", isOn: $state.displayExpiration)
                 } header: { Text("Header settings") }
-
-                Section {
-                    Toggle("Display Sensor Age, but not Time Remaining", isOn: $state.anubis)
-                } header: { Text("Anubis") }
+                    ._onBindingChange($state.displaySAGE) { enabled in
+                        if enabled { state.displayExpiration = false }
+                    }
+                    ._onBindingChange($state.displayExpiration) { enabled in
+                        if enabled { state.displaySAGE = false }
+                    }
 
                 Section {
                     HStack {
@@ -99,12 +111,6 @@ extension UIUX {
                 } header: { Text("Add Meal View settings ") }
 
                 Section {
-                    Toggle(isOn: $state.extendHomeView) {
-                        Text("Display Ratio and a History View button")
-                    }
-                } header: { Text("Home View Ratio Button") }
-
-                Section {
                     Picker(selection: $state.lightMode, label: Text("Color Scheme")) {
                         ForEach(LightMode.allCases) { item in
                             Text(NSLocalizedString(item.rawValue, comment: "ColorScheme Selection"))
@@ -113,7 +119,6 @@ extension UIUX {
                 } header: { Text("Light / Dark Mode") }
             }
             .dynamicTypeSize(...DynamicTypeSize.xxLarge)
-            .onAppear(perform: configureView)
             .navigationBarTitle("UI/UX")
             .navigationBarTitleDisplayMode(.automatic)
             .navigationBarItems(trailing: Button("Close", action: state.hideModal))

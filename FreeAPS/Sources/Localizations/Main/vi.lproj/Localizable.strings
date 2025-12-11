@@ -4,7 +4,7 @@
 */
 /* -------------------------------- */
 /* Bolus screen when adding insulin */
-"Add insulin without actually bolusing" = "Tự thêm liều insulin và bỏ qua liều bolus thực tế";
+"Add insulin without actually bolusing" = "Thêm liều insulin và bỏ qua liều bolus thực tế";
 
 /* Add insulin from source outside of pump */
 "Add %@ without bolusing" = "Thêm %@ và bỏ qua liều bolus";
@@ -41,7 +41,7 @@
 "Enact bolus" = "Tiêm liều Bolus";
 
 /*  */
-"Insulin recommended" = "Liều insulin được đề nghị";
+"Insulin recommended" = "Đề xuất tiêm insulin";
 
 /*  */
 "Insulin required" = "Liều insulin được yêu cầu";
@@ -189,6 +189,21 @@
 
 /* */
 "Are you sure?" = "Bạn có chắc chắn không?";
+
+/* */
+"Clear Records" = "Làm sạch dữ liệu";
+
+/* */
+"Delete CoreData database records" = "Xóa các bản ghi trong cơ sở dữ liệu CoreData";
+
+/* */
+"Delete NS records" = "Xóa các bản ghi NS";
+
+/* */
+"All records in " = "Tất cả bản ghi trong ";
+
+/* */
+" will be deleted!" = " sẽ bị xóa!";
 
 /* Bottom target temp */
 "Bottom target" = "Mục tiêu thấp nhất";
@@ -420,7 +435,7 @@ Enact a temp Basal or a temp target */
 "Preferences" = "Preferences";
 
 /* Recommended Insulin Fraction in preferences */
-"Recommended Insulin Fraction" = "Tỷ lệ liều insulin khuyên dùng";
+"Recommended Insulin Fraction" = "Tỷ lệ insulin được đề xuất";
 
 /* Do you want to show bolus screen after added carbs? */
 "Skip Bolus screen after carbs" = "Bỏ qua màn hình bolus sau carbs";
@@ -652,7 +667,7 @@ Enact a temp Basal or a temp target */
 "ISF" = "ISF";
 
 /* */
-"% Override" = "% Override";
+"% Override" = "% Ghi đè";
 
 /* */
 "The app Garmin Connect must be installed to use for iAPS.\n Go to App Store to download it" = "Phải cài đặt ứng dụng Garmin Connect để sử dụng cho iAPS.\n Hãy truy cập App Store để tải xuống ứng dụng này";
@@ -1176,7 +1191,7 @@ Enact a temp Basal or a temp target */
 "Temp basal Amount in U/h" = "Số lượng Temp Basal tính bằng U/h";
 
 /* */
-"Cancel Temp" = "Cancel Temp";
+"Cancel Temp" = "Hủy chế độ tạm thời";
 
 
 
@@ -1439,7 +1454,7 @@ Enact a temp Basal or a temp target */
 /* -------------- Developer settings ---------------------- */
 /* Debug options */
 
-"Developer" = "Developer";
+"Developer" = "Nhà phát triển";
 
 /* Debug option view NS Upload Profile */
 "NS Upload Profile and Settings" = "NS Upload Profile and Settings";
@@ -1518,10 +1533,10 @@ Enact a temp Basal or a temp target */
 "Connect to Apple Health" = "Kết nối Apple Health";
 
 /* Show when have not permissions for writing to Health */
-"For write data to Apple Health you must give permissions in Settings > Health > Data Access" = "Để ghi dữ liệu vào Apple Health, bạn phải cấp quyền trong Cài đặt > Sức khỏe > Truy cập dữ liệu";
+"To allow iAPS to write data to Apple Health, you must grant permission in Settings > Health > Data Access." = "Để ghi dữ liệu vào Apple Health, bạn phải cấp quyền trong Cài đặt > Sức khỏe > Truy cập dữ liệu";
 
 /* */
-"This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access. If you enter a glucose value into Apple Health, open iAPS to confirm it shows up." = "Điều này cho phép iAPS đọc và ghi vào Apple Heath. Bạn cũng phải cấp quyền trong Cài đặt > Sức khỏe > Truy cập dữ liệu. Nếu bạn nhập giá trị glucose vào Apple Health, hãy mở iAPS để xác nhận giá trị đó hiển thị.";
+"This allows iAPS to read from and write to Apple Heath. You must also give permissions in Settings > Health > Data Access." = "Điều này cho phép iAPS đọc và ghi vào Apple Heath. Bạn cũng phải cấp quyền trong Cài đặt > Sức khỏe > Truy cập dữ liệu.";
 
 /* New ALerts ------------------------- */
 /* Info title */
@@ -2036,13 +2051,13 @@ Enact a temp Basal or a temp target */
 "Change HbA1c Unit" = "Thay đổi đơn vị của HbA1c";
 
 /* */
-"Display Chart X - Grid lines" = "Hiển thị biểu đồ dạng X-Grid";
+"Display Chart X - Grid lines" = "Hiển thị biểu đồ trục X";
 
 /* */
 "Display Chart Y - Grid lines" = "Hiển thị biểu đồ trục Y";
 
 /* */
-"Display Chart Threshold lines for Low and High" = "Hiển thị các đường hiển thị Thấp và Cao";
+"Display Chart Threshold lines for Low and High" = "Hiển thị đường giới hạn Thấp và Cao";
 
 /* */
 "Standing / Laying TIR Chart" = "Biểu đồ TIR Đứng/Nằm";
@@ -2078,13 +2093,13 @@ Enact a temp Basal or a temp target */
 "Time In Range" = "Thời gian trong phạm vi";
 
 /* Average Loop Interval in minutes */
-"Average Interval" = "Thời gian trung bình";
+"Average Interval" = "Khoảng đo trung bình";
 
 /* Median BG */
 "Median" = "Median";
 
 /* CGM readings in statView */
-"Readings" = "Readings";
+"Readings" = "Số lần đo";
 
 /* CGM readings in statView */
 "Readings / 24h" = "Readings / 24h";
@@ -2117,7 +2132,7 @@ Enact a temp Basal or a temp target */
 "days" = "days";
 
 /* Nr of Loops in statPanel */
-"Loops" = "Loops";
+"Loops" = "Chu kỳ vòng lặp";
 
 /* Loop Errors in statPanel */
 "Errors" = "Lỗi";
@@ -2132,7 +2147,7 @@ Enact a temp Basal or a temp target */
 "Non-completed Loops" = "Vòng lặp chưa hoàn thành";
 
 /* Average loop interval */
-"Interval" = "Khoảng thời gian";
+"Interval" = "Interval";
 
 /* Median loop interval */
 "Duration" = "Duration";
@@ -2176,8 +2191,8 @@ Enact a temp Basal or a temp target */
 /* HbA1c for all glucose storage days */
 "all" = "Tất cả";
 
-/* Active Insulin View */
-"Active Insulin" = "Hoạt động của Insulin";
+/* IOB View */
+"Insulin on Board" = "Insulin đang hoạt động";
 
 /* Active Insulin View */
 "Time with negative insulin" = "Thời gian có Insulin âm tính";
@@ -2200,8 +2215,14 @@ Enact a temp Basal or a temp target */
 /* Active Insulin View */
 "TDD 3 days ago" = "Tổng liều 3 ngày trước";
 
-/* Active Carbohydrates View */
-"Active Carbohydrates" = "Hoạt động của Carbohydrates";
+/* COB View */
+"Carbohydrates on Board" = "Carbohydrate đang hoạt động";
+
+/* UI/UX-setting */
+"Display COB Chart" = "Hiển thị biểu đồ COB";
+
+/* UI/UX-setting */
+"Display Insulin Activity Chart" = "Hiển thị biểu đồ hoạt động của insulin";
 
 /* --------------------------------------------------------  Dexcom G7 --------------------------------------*/
 
@@ -2595,10 +2616,10 @@ Enact a temp Basal or a temp target */
 "Weight for a prolonged high glucose. For every hour the glucose stays high this adjustment will lower your ISF more.\n\nThe formula for Dura ISF adjustment is:\n\nDura ISF = 1 + hours above target * weight / target * (average glucose - target glucose)" = "Tình trạng đường huyết cao kéo dài. Cứ mỗi giờ đường huyết duy trì ở mức cao, việc điều chỉnh này sẽ làm giảm ISF của bạn nhiều hơn.\n\nCông thức điều chỉnh ISF của Dura là:\n\nDura ISF = 1 + hours above target * weight / target * (average glucose - target glucose)";
 
 /* */
-"SMB Delivery Ratio BG Range" = "Khoảng BG cho tỷ lệ phân phối SMB";
+"SMB Delivery Ratio BG Range" = "Khoảng BG cho tỉ lệ SMB";
 
 /* SMB Delivery Ratio BG Range description */
-"Default value: 0, Sensible is between 40 mg/dL and 120 mg/dL. The linearly increasing SMB delivery ratio is mapped to the glucose range [target_bg, target_bg+bg_range]. At target_bg the SMB ratio is smb_delivery_ratio_min, at target_bg+bg_range it is smb_delivery_ratio_max. With 0 the linearly increasing SMB ratio is disabled and the fix smb_delivery_ratio is used." = "Giá trị mặc định: 0. Giá trị hợp lý nằm trong khoảng từ 40 mg/dL đến 120 mg/dL. Tỷ lệ phân phối SMB sẽ tăng tuyến tính theo mức đường huyết trong khoảng [target_bg, target_bg + bg_range]. Tại mức đường huyết target_bg, tỷ lệ SMB là smb_delivery_ratio_min; tại target_bg + bg_range, tỷ lệ SMB là smb_delivery_ratio_max. Nếu đặt là 0, cơ chế tăng tuyến tính của tỷ lệ SMB sẽ bị vô hiệu hóa và hệ thống sẽ sử dụng một tỷ lệ SMB cố định (smb_delivery_ratio).";
+"Default value: 0, Sensible is between 40 mg/dL and 120 mg/dL. The linearly increasing SMB delivery ratio is mapped to the glucose range [target_bg, target_bg+bg_range]. At target_bg the SMB ratio is smb_delivery_ratio_min, at target_bg+bg_range it is smb_delivery_ratio_max. With 0 the linearly increasing SMB ratio is disabled and the fix smb_delivery_ratio is used." = "Giá trị mặc định: 0, giá trị hợp lý nằm trong khoảng từ 40 mg/dL đến 120 mg/dL. Tỷ lệ phân phối SMB tăng tuyến tính sẽ được ánh xạ theo khoảng glucose [target_bg, target_bg + bg_range]. Tại mức target_bg, tỷ lệ SMB là smb_delivery_ratio_min; tại mức target_bg + bg_range, tỷ lệ là smb_delivery_ratio_max. Nếu đặt giá trị là 0, tỷ lệ SMB tăng tuyến tính sẽ bị vô hiệu hóa và hệ thống sẽ sử dụng tỷ lệ SMB cố định (smb_delivery_ratio).";
 
 /* */
 "SMB Delivery Ratio Maximum" = "Tỷ lệ phân phối SMB tối đa";
@@ -2684,13 +2705,13 @@ Enact a temp Basal or a temp target */
 "This feature, enabled by default, resets the autosens ratio to neutral when you rewind your pump, on the assumption that this corresponds to a probable site change. Autosens will begin learning sensitivity anew from the time of the rewind, which may take up to 6 hours. If you usually rewind your pump independently of site changes, you may want to consider disabling this feature." = "Tính năng này, được bật theo mặc định, sẽ đặt lại autosens ratio về mức trung hoà khi bạn tua lại máy bơm của mình, với giả định rằng điều này tương ứng với một sự thay đổi điểm gắn có thể xảy ra. Autosens sẽ bắt đầu học lại độ nhạy kể từ thời điểm tua lại, quá trình này có thể mất tới 6 giờ. Nếu bạn thường tua lại máy bơm của mình chỉ để thay đổi điểm gắn, bạn có thể cân nhắc việc tắt tính năng này.";
 
 /* Headline "High Temptarget Raises Sensitivity" */
-"High Temptarget Raises Sensitivity" = "Mục tiêu tạm thời Cao sẽ làm Tăng độ nhạy";
+"High Temptarget Raises Sensitivity" = "Mục tiêu tạm thời Cao sẽ Tăng độ nhạy";
 
 /* ”High Temptarget Raises Sensitivity" */
 "Defaults to false. When set to true, raises sensitivity (lower sensitivity ratio) for temp targets set to >= 111. Synonym for exercise_mode. The higher your temp target above 110 will result in more sensitive (lower) ratios, e.g., temp target of 120 results in sensitivity ratio of 0.75, while 140 results in 0.6 (with default halfBasalTarget of 160)." = "Mặc định là False. Khi được đặt thành True, sẽ tăng độ nhạy (tỷ lệ độ nhạy thấp hơn) cho các mục tiêu tạm thời được đặt thành >= 111. Từ đồng nghĩa với Chế độ thể dục. Mục tiêu tạm thời của bạn trên 110 càng cao sẽ dẫn đến tỷ lệ nhạy cảm hơn (thấp hơn), ví dụ: mục tiêu tạm thời là 120 dẫn đến tỷ lệ độ nhạy là 0,75, trong khi 140 dẫn đến tỷ lệ nhạy cảm là 0,6 (với một nửa mục tiêu với mặc định là 160).";
 
 /* Headline ”Low Temptarget Lowers Sensitivity" */
-"Low Temptarget Lowers Sensitivity" = "Mục tiêu tạm thời Thấp sẽ làm Giảm độ nhạy";
+"Low Temptarget Lowers Sensitivity" = "Mục tiêu tạm thời Thấp sẽ Giảm độ nhạy";
 
 /* ”Low Temptarget Lowers Sensitivity" */
 "Defaults to false. When set to true, can lower sensitivity (higher sensitivity ratio) for temptargets <= 99. The lower your temp target below 100 will result in less sensitive (higher) ratios, e.g., temp target of 95 results in sensitivity ratio of 1.09, while 85 results in 1.33 (with default halfBasalTarget of 160)." = "Mặc định là False. Khi được đặt thành True, có thể giảm độ nhạy (tỷ lệ độ nhạy cao hơn) cho mục tiêu tạm thời <= 99. Mục tiêu tạm thời của bạn càng thấp dưới 100 sẽ dẫn đến tỷ lệ kém nhạy hơn (cao hơn), ví dụ: mục tiêu tạm thời là 95 dẫn đến tỷ lệ độ nhạy là 1,09, trong khi 85 kết quả là 1,33 (với Một nửa mục tiêu cơ bản mặc định là 160).";
@@ -2750,7 +2771,7 @@ Enact a temp Basal or a temp target */
 "This enables supermicrobolus (SMB) while carbs on board (COB) are positive." = "Điều này cho phép Super Micro Bolus (SMB) trong khi lượng carb đang hoạt động (COB) ở mức dương.";
 
 /* Headline "Enable SMB With Temptarget” */
-"Enable SMB With Temptarget" = "Kích hoạt SMB với liều Mục Tiêu Tạm Thời";
+"Enable SMB With Temptarget" = "Bật SMB với mục tiêu tạm thời";
 
 /* "Enable SMB With Temptarget” */
 "This enables supermicrobolus (SMB) with eating soon / low temp targets. With this feature enabled, any temporary target below 100mg/dL, such as a temp target of 99 (or 80, the typical eating soon target) will enable SMB." = "Điều này cho phép Super Micro Bolus (SMB) đạt được mục tiêu ăn sớm / liều tạm thời thấp. Khi tính năng này được bật, mọi mục tiêu tạm thời dưới 100mg/dL, chẳng hạn như mục tiêu tạm thời là 99 (hoặc 80, mục tiêu ăn sớm thông thường) sẽ kích hoạt SMB.";
@@ -2768,10 +2789,10 @@ Enact a temp Basal or a temp target */
 "Defaults to false. When true, enables supermicrobolus (SMB) for 6h after carbs, even with 0 carbs on board (COB)." = "Mặc định là False. Khi True, hãy bật Super Micro Bolus (SMB) trong 6 giờ sau khi nạp carbs, ngay cả khi không có carbs (COB).";
 
 /* Enable "Allow SMB With High Temptarget" */
-"Allow SMB With High Temptarget" = "Bật SMB với mục tiêu tạm cao";
+"Allow SMB With High Temptarget" = "Bật SMB với mục tiêu tạm thời cao";
 
 /* Headline "Allow SMB With High Temptarget" */
-"Allow SMB With High Temptarget" = "Bật SMB với mục tiêu tạm cao";
+"Allow SMB With High Temptarget" = "Bật SMB với mục tiêu tạm thời cao";
 
 /* "Allow SMB With High Temptarget" */
 "Defaults to false. When true, allows supermicrobolus (if otherwise enabled) even with high temp targets (> 100 mg/dl)." = "Mặc định là False. Khi True, cho phép Super Micro Bolus (nếu được kích hoạt khác) ngay cả với mục tiêu tạm thời cao (> 100 mg/dl).";
@@ -2858,7 +2879,7 @@ Enact a temp Basal or a temp target */
 "Remaining Carbs Cap" = "Lượng carb còn lại";
 
 /* "Remaining Carbs Cap" */
-"This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption." = "Đây là lượng carb tối đa mà chúng tôi cho rằng sẽ hấp thụ trong 4 giờ nếu chúng tôi chưa thấy khả năng hấp thụ carb.";
+"This is the amount of the maximum number of carbs we’ll assume will absorb over 4h if we don’t yet see carb absorption. Maximum 90" = "Đây là lượng carbs tối đa mà hệ thống sẽ giả định sẽ được hấp thụ trong vòng 4 giờ nếu chưa phát hiện thấy sự hấp thụ carb. Tối đa là 90g";
 
 /* Headline ”Max SMB Basal Minutes" */
 "Max SMB Basal Minutes" = "Giới hạn liều nền qua SMB";
@@ -3072,7 +3093,7 @@ Enact a temp Basal or a temp target */
 "Normally glucose is colored red only when over or under your notification limits for high/low" = "Thông thường glucose chỉ có màu đỏ khi vượt quá hoặc dưới giới hạn thông báo của bạn về mức cao";
 
 /* UI/UX option */
-"Horizontal Scroll View Visible hours" = "Số giờ hiển thị trong chế độ cuộn ngang";
+"Horizontal Scroll View Visible hours" = "Giờ hiển thị trong chế độ cuộn ngang";
 
 /* UI/UX option */
 "Display Time Interval Setting Button" = "Hiển thị nút cài đặt khoảng thời gian";
@@ -3090,10 +3111,16 @@ Enact a temp Basal or a temp target */
 "Display Sensor Age" = "Hiển thị thời gian cảm biến";
 
 /* UI/UX option */
+"Display Sensor Time Remaining" = "Hiện thời gian còn lại của cảm biến";
+
+/* UI/UX option */
 "Hide Concentration Badge" = "Ẩn nhãn nồng độ Insulin";
 
 /* UI/UX option */
 "Use insulin bars" = "Sử dụng thanh hiển thị insulin";
+
+/* UI/UX option */
+"Use carb bars" = "Sử dụng thanh hiển thị carb";
 
 /* UI/UX option */
 "Hide the bolus amount strings when amount is under" = "Ẩn số lượng bolus khi ở dưới mức";
@@ -3105,16 +3132,10 @@ Enact a temp Basal or a temp target */
 "Display carb equivalent amount" = "Hiển thị số lượng carb quy đổi";
 
 /* UI/UX option */
-"Display Sensor Time Remaining" = "Hiển thị thời gian còn lại của cảm biến";
-
-/* UI/UX option */
-"Display Sensor Age, but not Time Remaining" = "Hiển thị tuổi cảm biến, không hiển thị thời gian còn lại";
-
-/* UI/UX option */
 "Display Ratio and a History View button" = "Hiển thị tỷ lệ và nút Xem lịch sử";
 
 /* UI/UX option */
-"Auto ISF Home View" = "Xem trang chủ Auto ISF";
+"Home View Ratio Button" = "Nút tỷ lệ trong giao diện chính";
 
 /* UI/UX option */
 "Light" = "Sáng";
@@ -3130,6 +3151,12 @@ Enact a temp Basal or a temp target */
 
 /* UI/UX option */
 "Light / Dark Mode" = "Chế độ Sáng/Tối";
+
+/* Debug option */
+"Neglect Carbohydrates in oref0" = "Bỏ qua carbohydrate trong oref0";
+
+/* Debug option */
+"Hide oref0 Predictions" = "Ẩn dự đoán của oref0";
 
 /* Setting title */
 "Bolus Calculator" = "Tính toán liều Bolus";
@@ -3150,7 +3177,7 @@ Enact a temp Basal or a temp target */
 "Show Predictions" = "Hiển thị dự đoán";
 
 /* Notification option */
-"Live activity displays blood glucose live on the lock screen and on the dynamic island (if available)" = "Hoạt động trực tiếp hiển thị đường huyết trực tiếp trên màn hình khóa và động (nếu có)";
+"Live activity displays blood glucose live on the lock screen and on the dynamic island (if available)" = "Hiển thị hoạt động trực tiếp đường huyết trên màn hình khóa và động (nếu có)";
 
 /* Notification option */
 "Show Live activity" = "Hiển thị hoạt động trực tiếp";
@@ -3209,3 +3236,57 @@ Enact a temp Basal or a temp target */
 
 /* Headline "To enable settings, go to the App Config section in iOS Settings App" */
 "To enable settings, go to the App Config section in iOS Settings App" = "Để bật các cài đặt, hãy vào phần Cấu hình ứng dụng trong ứng dụng Cài đặt của iOS";
+
+/* Section header in CGM view */
+"Active CGM" = "Thêm CGM";
+
+/* pump name label, when pump is a cgm "Pump/CGM" */
+"Pump/CGM" = "Pump/CGM";
+
+/* Button "Stop using the pump as CGM" */
+"Stop using the pump as CGM" = "Ngừng sử dụng pump như CGM";
+
+/* Section header in CGM view */
+"Shared App Group Source" = "Nguồn Nhóm Ứng dụng Dùng Chung";
+
+/* prefix for the shared app group application */
+"Reading from" = "Đang đọc từ";
+
+/* button to disconnect from the shared app group "Disconnect" */
+"Disconnect" = "Ngắt kết nối";
+
+
+/* description for Shared App Group Source section */
+"Read BG from an external CGM app using a shared app group." = "Đọc đường huyết từ ứng dụng CGM bên ngoài thông qua nhóm ứng dụng dùng chung.";
+
+
+/* prefix before the app name on the button to start reading from shared app group */
+"Read from " = "Đọc từ ";
+
+/* description for the backfill section in Nightscout settings screen */
+"Fetches old glucose readings from Nightscout" = "Tải lại các giá trị đường huyết trước đó từ Nightscout";
+
+/* header and button label for the 'upload old glucose' action in Nightscout settings screen */
+"Upload glucose" = "Tải đường huyết lên";
+
+/* description for the 'upload old glucose' section in Nightscout settings screen */
+"Uploads old glucose readings to Nightscout" = "Gửi các giá trị đường huyết trước đó lên Nightscout";
+
+/* message when uploads are enabled, but glucose uploads are disabled, in Nightscout settings screen */
+"Glucose upload disabled in CGM settings" = "Tải lên dữ liệu đường huyết đã bị tắt trong cài đặt CGM";
+
+/* header for the CGM list in CGM settings screen */
+"Connect to CGM" = "Kết nối với CGM";
+
+
+/* message displayed when the pump is configured to be the CGM as well (enlite), in CGM settings screen */
+"Pump+CGM" = "Pump/CGM";
+
+/* label for the button to remove the CGM when the pump is configured to be the CGM as well (enlite), in CGM settings screen */
+"Stop using the pump as CGM" = "Ngừng sử dụng pump như CGM";
+
+/* hint under the CGM list in CGM settings screen */
+"To receive reading from xDrip4iOS, Glucose Direct or another compatible app, select Shared App Group CGM." = "Để nhận dữ liệu đường huyết từ xDrip4iOS, Glucose Direct hoặc ứng dụng tương thích khác, hãy chọn CGM trong nhóm ứng dụng chia sẻ (Shared App Group).";
+
+/* message displayed in pump settings screen when the pump manager reports uncertain delivery */
+"Pump delivery uncertain" = "Không xác định được việc tiêm insulin";
